@@ -1,0 +1,26 @@
+### Register a new user
+POST http://localhost:7777/auth/register
+Content-Type: application/json
+
+{
+  "name": "Juan Diego Lopez",
+  "email": "juan.lopez@gorillalogic.com",
+  "phone": "+573185022214",
+  "password": "1234"
+}
+
+### Login user
+POST http://localhost:7777/auth/login
+Content-Type: application/json
+
+{
+  "email": "juan.lopez@gorillalogic.com",
+  "password": "1234"
+}
+
+
+### Logout user
+POST http://localhost:7777/auth/logout
+
+### Check session
+GET  http://localhost:7777/auth/whoami
