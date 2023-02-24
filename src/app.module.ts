@@ -1,6 +1,7 @@
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { Module } from '@nestjs/common';
+import { Module, ValidationPipe } from '@nestjs/common';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { APP_PIPE } from '@nestjs/core';
 
 const configureTypeORM = (configService: ConfigService) => {
   return {
@@ -24,6 +25,11 @@ const configureTypeORM = (configService: ConfigService) => {
     }),
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    {
+      provide: APP_PIPE,
+      useClass: ValidationPipe,
+    },
+  ],
 })
 export class AppModule {}
