@@ -1,0 +1,19 @@
+on: [push]
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.13.0'
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: install dependencies
+        run: npm install
+      - name: lint
+        run: npm run lint
+      - name: test
+        run: npm run test
+      - name: build
+        run: npm run build
