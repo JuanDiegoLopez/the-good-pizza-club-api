@@ -4,7 +4,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { randomBytes, scrypt as _scrypt } from 'crypto';
-import { CreateUserDto } from 'src/dtos/create-user.dto';
+import { CreateUserDto } from '../dtos/create-user.dto';
 import { promisify } from 'util';
 import { UserService } from './user.service';
 

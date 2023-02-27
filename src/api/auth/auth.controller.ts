@@ -12,9 +12,9 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import { Request as RequestData } from 'express';
 import { SessionData } from 'express-session';
-import { CreateUserDto } from 'src/dtos/create-user.dto';
-import { User } from 'src/entities/user.entity';
-import { AuthService } from 'src/services/auth.service';
+import { CreateUserDto } from '../../dtos/create-user.dto';
+import { User } from '../../entities/user.entity';
+import { AuthService } from '../../services/auth.service';
 
 declare module 'express' {
   interface Request {
