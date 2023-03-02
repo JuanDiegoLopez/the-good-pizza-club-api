@@ -44,6 +44,9 @@ export class AppModule {
       secret: this.configService.get('COOKIE_SECRET'),
       resave: false,
       saveUninitialized: false,
+      cookie: {
+        httpOnly: false,
+      },
     });
 
     consumer.apply(AppSession).forRoutes('*');
