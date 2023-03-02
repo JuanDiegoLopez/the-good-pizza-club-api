@@ -9,8 +9,8 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { SessionData } from 'express-session';
-import { LoginDto } from 'src/dtos/login.dto';
-import { AuthGuard } from 'src/guards/auth.guard';
+import { LoginDto } from '../../dtos/login.dto';
+import { AuthGuard } from '../../guards/auth.guard';
 import { CreateUserDto } from '../../dtos/create-user.dto';
 import { User } from '../../entities/user.entity';
 import { AuthService } from '../../services/auth.service';

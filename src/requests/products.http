@@ -1,0 +1,2 @@
+### Get products
+GET http://localhost:7777/api/products

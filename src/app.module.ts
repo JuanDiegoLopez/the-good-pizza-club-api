@@ -5,6 +5,7 @@ import { APP_PIPE } from '@nestjs/core';
 import { AuthModule } from './api/auth/auth.module';
 import { User } from './entities/user.entity';
 import * as session from 'express-session';
+import { ProductsModule } from './api/products/products.module';
 
 const configureTypeORM = (configService: ConfigService) => {
   return {
@@ -27,6 +28,7 @@ const configureTypeORM = (configService: ConfigService) => {
       useFactory: configureTypeORM,
     }),
     AuthModule,
+    ProductsModule,
   ],
   controllers: [],
   providers: [
