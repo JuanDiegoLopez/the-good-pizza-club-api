@@ -4,23 +4,16 @@ import {
   Controller,
   Get,
   Post,
-  Request,
   Session,
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
-import { Request as RequestData } from 'express';
 import { SessionData } from 'express-session';
+import { LoginDto } from 'src/dtos/login.dto';
+import { AuthGuard } from 'src/guards/auth.guard';
 import { CreateUserDto } from '../../dtos/create-user.dto';
 import { User } from '../../entities/user.entity';
 import { AuthService } from '../../services/auth.service';
-
-declare module 'express' {
-  interface Request {
-    user?: User;
-  }
-}
 
 declare module 'express-session' {
   interface SessionData {
@@ -37,16 +30,14 @@ export class AuthController {
   async signup(@Body() body: CreateUserDto, @Session() session: SessionData) {
     const user = await this.authService.registerUser(body);
     session.user = user;
-
     return user;
   }
 
   @Post('/login')
-  @UseGuards(AuthGuard('local'))
-  singIn(@Request() request: RequestData) {
-    request.session.user = request.user;
-
-    return request.user;
+  async singIn(@Body() body: LoginDto, @Session() session: SessionData) {
+    const user = await this.authService.validateUser(body.email, body.password);
+    session.user = user;
+    return user;
   }
 
   @Post('/logout')
@@ -55,6 +46,7 @@ export class AuthController {
   }
 
   @Get('/whoami')
+  @UseGuards(AuthGuard)
   whoAmI(@Session() session: SessionData) {
     return session.user;
   }

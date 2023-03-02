@@ -1,5 +1,5 @@
 ### Register a new user
-POST http://localhost:7777/auth/register
+POST http://localhost:7777/api/auth/register
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 }
 
 ### Login user
-POST http://localhost:7777/auth/login
+POST http://localhost:7777/api/auth/login
 Content-Type: application/json
 
 {
@@ -18,9 +18,8 @@ Content-Type: application/json
   "password": "1234"
 }
 
-
 ### Logout user
-POST http://localhost:7777/auth/logout
+POST http://localhost:7777/api/auth/logout
 
 ### Check session
-GET  http://localhost:7777/auth/whoami
+GET  http://localhost:7777/api/auth/whoami
