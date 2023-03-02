@@ -1,4 +1,11 @@
-import { IsEmail, IsString, IsPhoneNumber } from 'class-validator';
+import {
+  IsEmail,
+  IsString,
+  IsPhoneNumber,
+  IsOptional,
+  IsEnum,
+} from 'class-validator';
+import { Role } from '../constants/global.constants';
 
 export class CreateUserDto {
   @IsEmail()
@@ -12,4 +19,8 @@ export class CreateUserDto {
 
   @IsPhoneNumber()
   phone: string;
+
+  @IsOptional()
+  @IsEnum(Role)
+  role: string;
 }

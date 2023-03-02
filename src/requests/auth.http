@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
   "name": "Juan Diego Lopez",
-  "email": "juan.lopez@gorillalogic.com",
+  "email": "juan@gmail.com",
   "phone": "+573185022214",
   "password": "1234"
 }
@@ -14,7 +14,7 @@ POST http://localhost:7777/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "juan.lopez@gorillalogic.com",
+  "email": "juandiegolopez@outlook.com",
   "password": "1234"
 }
 

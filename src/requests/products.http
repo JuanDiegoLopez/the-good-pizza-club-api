@@ -1,2 +1,30 @@
 ### Get products
 GET http://localhost:7777/api/products
+
+### Get product by id
+GET http://localhost:7777/api/products/1
+
+### Create product
+POST http://localhost:7777/api/products
+Content-Type: application/json
+
+{
+  "name": "Egg & Basil",
+  "description": "Our famous egg, basil, capers and black pepper. Don'\t knock it until you try it.",
+  "image": "",
+  "price": 14,
+  "weight": 540,
+  "calories": 1200,
+  "image": "http://localhost:7000/pizza-1.png"
+}
+
+### Update existing product
+PATCH http://localhost:7777/api/products/1
+Content-Type: application/json
+
+{
+  "image": "http://localhost:7000/pizza-2.png"
+}
+
+### Delete product
+DELETE http://localhost:7777/api/products/1
