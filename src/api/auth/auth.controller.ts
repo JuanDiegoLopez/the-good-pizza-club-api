@@ -34,8 +34,11 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Post('/register')
-  signup(@Body() body: CreateUserDto) {
-    return this.authService.registerUser(body);
+  async signup(@Body() body: CreateUserDto, @Session() session: SessionData) {
+    const user = await this.authService.registerUser(body);
+    session.user = user;
+
+    return user;
   }
 
   @Post('/login')
