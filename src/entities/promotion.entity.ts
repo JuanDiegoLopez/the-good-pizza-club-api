@@ -5,10 +5,10 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Promotion } from './promotion.entity';
+import { Product } from './product.entity';
 
 @Entity()
-export class Product {
+export class Promotion {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -19,11 +19,8 @@ export class Product {
   description: string;
 
   @Column()
-  price: number;
-
-  @Column()
   image: string;
 
-  @OneToMany(() => Promotion, (promotion) => promotion.product)
-  promotions: Promotion[];
+  @ManyToOne(() => Product, (product) => product.promotions)
+  product: Product;
 }

@@ -1,0 +1,27 @@
+### Get promotions
+GET http://localhost:7777/api/promotions
+
+### Get promotion by id
+GET http://localhost:7777/api/promotions/1
+
+### Create promotion
+POST http://localhost:7777/api/promotions
+Content-Type: application/json
+
+{
+  "name": "2x1 Fridays",
+  "description": "On medium siza pizzas with no additional toppings.",
+  "image": "http://localhost:7777/promotion-1.png",
+  "productId": 1
+}
+
+### Update promotion
+PATCH http://localhost:7777/api/promotions/1
+Content-Type: application/json
+
+{
+  "name": "2x1 Fridays!"
+}
+
+### Delete promotion
+DELETE http://localhost:7777/api/promotions/1

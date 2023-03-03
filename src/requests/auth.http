@@ -6,7 +6,8 @@ Content-Type: application/json
   "name": "Juan Diego Lopez",
   "email": "juan@gmail.com",
   "phone": "+573185022214",
-  "password": "1234"
+  "password": "1234",
+  "role": "admin"
 }
 
 ### Login user
@@ -14,7 +15,7 @@ POST http://localhost:7777/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "juandiegolopez@outlook.com",
+  "email": "juan@gmail.com",
   "password": "1234"
 }
 

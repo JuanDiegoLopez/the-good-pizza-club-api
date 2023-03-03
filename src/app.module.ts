@@ -9,12 +9,14 @@ import { ProductsModule } from './api/products/products.module';
 import { Product } from './entities/product.entity';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { Promotion } from './entities/promotion.entity';
+import { PromotionsModule } from './api/promotions/promotions.module';
 
 const configureTypeORM = (configService: ConfigService) => {
   return {
     type: 'sqlite',
     database: configService.get('DB_NAME'),
-    entities: [User, Product],
+    entities: [User, Product, Promotion],
     // TODO: set to false before going to production
     synchronize: true,
   } as TypeOrmModuleOptions;
@@ -35,6 +37,7 @@ const configureTypeORM = (configService: ConfigService) => {
     }),
     AuthModule,
     ProductsModule,
+    PromotionsModule,
   ],
   controllers: [],
   providers: [
