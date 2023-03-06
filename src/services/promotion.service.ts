@@ -13,7 +13,9 @@ export class PromotionService {
   ) {}
 
   find() {
-    return this.repo.find();
+    return this.repo.find({
+      relations: ['product'],
+    });
   }
 
   async create(data: CreatePromotionDto) {

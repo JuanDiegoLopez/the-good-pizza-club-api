@@ -10,6 +10,9 @@ export class CreateProductDto {
   @IsString()
   image: string;
 
+  @IsString()
+  color: string;
+
   @IsNumber()
   price: number;
 

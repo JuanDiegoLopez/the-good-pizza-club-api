@@ -1,10 +1,4 @@
-import {
-  Column,
-  Entity,
-  ManyToOne,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Promotion } from './promotion.entity';
 
 @Entity()
@@ -23,6 +17,9 @@ export class Product {
 
   @Column()
   image: string;
+
+  @Column()
+  color: string;
 
   @OneToMany(() => Promotion, (promotion) => promotion.product)
   promotions: Promotion[];

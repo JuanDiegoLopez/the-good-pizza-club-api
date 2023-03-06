@@ -11,11 +11,11 @@ Content-Type: application/json
 {
   "name": "Egg & Basil",
   "description": "Our famous egg, basil, capers and black pepper. Don'\t knock it until you try it.",
-  "image": "",
   "price": 14,
   "weight": 540,
   "calories": 1200,
-  "image": "http://localhost:7000/pizza-1.png"
+  "image": "http://localhost:7000/pizza-1.png",
+  "color": "orange"
 }
 
 ### Update existing product
