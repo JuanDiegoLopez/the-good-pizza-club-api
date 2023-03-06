@@ -1,0 +1,16 @@
+[
+  {
+    "id": 0,
+    "name": "2x1 Fridays",
+    "description": "On medium siza pizzas with no additional toppings.",
+    "image": "http://localhost:7777/promotion-1.png",
+    "productId": 0
+  },
+  {
+    "id": 1,
+    "name": "33% OFF",
+    "description": "",
+    "image": "http://localhost:7777/promotion-2.png",
+    "productId": 1
+  }
+]
