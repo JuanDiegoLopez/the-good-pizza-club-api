@@ -21,6 +21,12 @@ export class Product {
   @Column()
   color: string;
 
+  @Column()
+  weight: number;
+
+  @Column()
+  calories: number;
+
   @OneToMany(() => Promotion, (promotion) => promotion.product)
   promotions: Promotion[];
 }
