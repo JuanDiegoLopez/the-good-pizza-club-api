@@ -1,0 +1,26 @@
+### Get records
+GET http://localhost:7777/api/records
+
+### Get record by id
+GET http://localhost:7777/api/records/1
+
+### Create record
+POST http://localhost:7777/api/records
+Content-Type: application/json
+
+{
+  "name": "Wine",
+  "type": "drink",
+  "price": 15
+}
+
+### Update record
+PATCH http://localhost:7777/api/records/1
+Content-Type:  application/json
+
+{
+  "price": 14
+}
+
+### Delete record
+DELETE http://localhost:7777/api/records/1
