@@ -1,7 +1,8 @@
 import { Exclude } from 'class-transformer';
 
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Role } from '../constants/global.constants';
+import { Address } from './address.entity';
 
 @Entity()
 export class User {
@@ -24,4 +25,7 @@ export class User {
   @Column()
   @Exclude()
   password: string;
+
+  @OneToMany(() => Address, (address) => address.id)
+  addresses: Address[];
 }
