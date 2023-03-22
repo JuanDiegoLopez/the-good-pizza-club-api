@@ -13,3 +13,8 @@ export enum RecordTypes {
   Appetizer = 'appetizer',
   Dessert = 'dessert',
 }
+
+export enum CardTypes {
+  Credit = 'credit',
+  Debit = 'debit',
+}

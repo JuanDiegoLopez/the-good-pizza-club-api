@@ -3,6 +3,7 @@ import { Exclude } from 'class-transformer';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Role } from '../constants/global.constants';
 import { Address } from './address.entity';
+import { Payment } from './payment.entity';
 
 @Entity()
 export class User {
@@ -28,4 +29,7 @@ export class User {
 
   @OneToMany(() => Address, (address) => address.id)
   addresses: Address[];
+
+  @OneToMany(() => Payment, (payment) => payment.id)
+  payments: Payment[];
 }

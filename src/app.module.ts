@@ -15,12 +15,13 @@ import { RecordsModule } from './api/records/records.module';
 import { Record } from './entities/record.entity';
 import { Address } from './entities/address.entity';
 import { UsersModule } from './api/users/users.module';
+import { Payment } from './entities/payment.entity';
 
 const configureTypeORM = (configService: ConfigService) => {
   return {
     type: 'sqlite',
     database: configService.get('DB_NAME'),
-    entities: [User, Product, Promotion, Record, Address],
+    entities: [User, Product, Promotion, Record, Address, Payment],
     // TODO: set to false before going to production
     synchronize: true,
   } as TypeOrmModuleOptions;
