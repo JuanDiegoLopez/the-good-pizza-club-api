@@ -11,7 +11,6 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { SessionData } from 'express-session';
-import { session } from 'passport';
 import { CreateAddressDto } from '../../dtos/create-address.dto';
 import { CreatePaymentDto } from '../../dtos/create-payment.dto';
 import { AuthGuard } from '../../guards/auth.guard';
