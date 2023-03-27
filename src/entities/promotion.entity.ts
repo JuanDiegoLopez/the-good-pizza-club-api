@@ -15,6 +15,9 @@ export class Promotion {
   @Column()
   image: string;
 
+  @Column({ type: 'float' })
+  discount: number;
+
   @ManyToOne(() => Product, (product) => product.promotions)
   product: Product;
 }

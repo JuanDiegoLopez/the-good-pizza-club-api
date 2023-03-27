@@ -4,6 +4,7 @@
     "name": "2x1 Fridays",
     "description": "On medium siza pizzas with no additional toppings.",
     "image": "http://localhost:7777/promotion-1.png",
+    "discount": 0.5,
     "productId": 0
   },
   {
@@ -11,6 +12,7 @@
     "name": "33% OFF",
     "description": "",
     "image": "http://localhost:7777/promotion-2.png",
+    "discount": 0.33,
     "productId": 1
   }
 ]

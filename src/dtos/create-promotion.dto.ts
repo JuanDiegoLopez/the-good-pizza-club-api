@@ -11,5 +11,8 @@ export class CreatePromotionDto {
   image: string;
 
   @IsNumber()
+  discount: number;
+
+  @IsNumber()
   productId: number;
 }
