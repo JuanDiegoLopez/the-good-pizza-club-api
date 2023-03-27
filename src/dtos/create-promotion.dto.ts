@@ -15,4 +15,7 @@ export class CreatePromotionDto {
 
   @IsNumber()
   productId: number;
+
+  @IsNumber()
+  sizeId: number;
 }

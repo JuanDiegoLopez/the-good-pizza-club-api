@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Promotion } from './promotion.entity';
 
 @Entity()
 export class Record {
@@ -13,4 +14,7 @@ export class Record {
 
   @Column()
   price: number;
+
+  @OneToMany(() => Promotion, (promotion) => promotion.size)
+  promotions: Promotion[];
 }

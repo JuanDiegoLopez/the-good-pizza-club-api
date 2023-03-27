@@ -24,10 +24,11 @@ async function insertProducts(queryRunner, products) {
 
 async function insertPromotions(queryRunner, promotions) {
   promotions.forEach(async (promotion) => {
-    const { id, name, description, image, discount, productId } = promotion;
+    const { id, name, description, image, discount, productId, sizeId } =
+      promotion;
 
     await queryRunner.query(
-      `INSERT INTO promotion ("id", "name", "description", "image", "discount", "productId") VALUES (${id}, "${name}", "${description}", "${image}", ${discount}, ${productId})`,
+      `INSERT INTO promotion ("id", "name", "description", "image", "discount", "productId", "sizeId") VALUES (${id}, "${name}", "${description}", "${image}", ${discount}, ${productId}, ${sizeId})`,
     );
   });
 }

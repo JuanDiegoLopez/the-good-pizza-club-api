@@ -4,24 +4,28 @@ import { Repository } from 'typeorm';
 import { CreatePromotionDto } from '../dtos/create-promotion.dto';
 import { Promotion } from '../entities/promotion.entity';
 import { ProductService } from './product.service';
+import { RecordService } from './record.service';
 
 @Injectable()
 export class PromotionService {
   constructor(
     @InjectRepository(Promotion) private repo: Repository<Promotion>,
     private productService: ProductService,
+    private recordService: RecordService,
   ) {}
 
   find() {
     return this.repo.find({
-      relations: ['product'],
+      relations: ['product', 'size'],
     });
   }
 
   async create(data: CreatePromotionDto) {
     const product = await this.productService.findOne(data.productId);
+    const size = await this.recordService.findOne(data.sizeId);
     const promotion = this.repo.create(data);
     promotion.product = product;
+    promotion.size = size;
 
     return this.repo.save(promotion);
   }
