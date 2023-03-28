@@ -13,10 +13,10 @@ export class Address {
   description: string;
 
   @Column()
-  lat: string;
+  lat: number;
 
   @Column()
-  lng: string;
+  lng: number;
 
   @Column({ default: false })
   isDefault: boolean;

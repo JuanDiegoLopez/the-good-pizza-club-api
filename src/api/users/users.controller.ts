@@ -36,6 +36,11 @@ export class UsersController {
     return this.addressService.create(session.user.id, body);
   }
 
+  @Delete('/address/:id')
+  deleteAddress(@Param('id') id: string) {
+    return this.addressService.remove(Number(id));
+  }
+
   @Get('/payment')
   getPayments(@Session() session: SessionData) {
     return this.paymentService.find(session.user.id);

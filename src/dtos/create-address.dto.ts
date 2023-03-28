@@ -8,8 +8,8 @@ export class CreateAddressDto {
   description: string;
 
   @IsLatitude()
-  lat: string;
+  lat: number;
 
   @IsLongitude()
-  lng: string;
+  lng: number;
 }

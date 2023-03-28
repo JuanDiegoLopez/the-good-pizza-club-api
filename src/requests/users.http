@@ -13,6 +13,9 @@ Content-Type: application/json
   "lng": -40
 }
 
+### Delete address by id
+DELETE http://localhost:7777/api/users/address/1
+
 ### Get payments from current logged user
 GET http://localhost:7777/api/users/payment
 
@@ -29,5 +32,5 @@ Content-Type: application/json
   "securityCode": 111
 }
 
-### Delete paymeny by id
+### Delete payment by id
 DELETE http://localhost:7777/api/users/payment/1

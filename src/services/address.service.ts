@@ -15,6 +15,10 @@ export class AddressService {
     return this.repo.findBy({ user: { id: id } });
   }
 
+  findOne(id: number) {
+    return this.repo.findOneBy({ id });
+  }
+
   async create(id: number, data: Partial<Address>) {
     const user = await this.userService.findOne(id);
 
@@ -23,5 +27,13 @@ export class AddressService {
     const address = this.repo.create({ user, ...data });
 
     return this.repo.save(address);
+  }
+
+  async remove(id: number) {
+    const payment = await this.findOne(id);
+
+    if (!payment) throw new NotFoundException('Payment not found');
+
+    return this.repo.remove(payment);
   }
 }
