@@ -9,10 +9,10 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { SessionData } from 'express-session';
-import { LoginDto } from '../../dtos/login.dto';
-import { AuthGuard } from '../../guards/auth.guard';
 import { CreateUserDto } from '../../dtos/create-user.dto';
+import { LoginDto } from '../../dtos/login.dto';
 import { User } from '../../entities/user.entity';
+import { AuthGuard } from '../../guards/auth.guard';
 import { AuthService } from '../../services/auth.service';
 
 declare module 'express-session' {

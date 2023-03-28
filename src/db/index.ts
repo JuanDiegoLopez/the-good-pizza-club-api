@@ -1,5 +1,5 @@
-import AppDataSource from './data-source';
 import * as fs from 'fs/promises';
+import AppDataSource from './data-source';
 
 async function insertUsers(queryRunner, users) {
   users.forEach(async (user) => {

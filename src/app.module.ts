@@ -1,21 +1,21 @@
-import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MiddlewareConsumer, Module, ValidationPipe } from '@nestjs/common';
-import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_PIPE } from '@nestjs/core';
-import { AuthModule } from './api/auth/auth.module';
-import { User } from './entities/user.entity';
-import * as session from 'express-session';
-import { ProductsModule } from './api/products/products.module';
-import { Product } from './entities/product.entity';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import * as session from 'express-session';
 import { join } from 'path';
-import { Promotion } from './entities/promotion.entity';
+import { AuthModule } from './api/auth/auth.module';
+import { ProductsModule } from './api/products/products.module';
 import { PromotionsModule } from './api/promotions/promotions.module';
 import { RecordsModule } from './api/records/records.module';
-import { Record } from './entities/record.entity';
-import { Address } from './entities/address.entity';
 import { UsersModule } from './api/users/users.module';
+import { Address } from './entities/address.entity';
 import { Payment } from './entities/payment.entity';
+import { Product } from './entities/product.entity';
+import { Promotion } from './entities/promotion.entity';
+import { Record } from './entities/record.entity';
+import { User } from './entities/user.entity';
 
 const configureTypeORM = (configService: ConfigService) => {
   return {

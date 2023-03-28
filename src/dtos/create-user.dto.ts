@@ -1,9 +1,9 @@
 import {
   IsEmail,
-  IsString,
-  IsPhoneNumber,
-  IsOptional,
   IsEnum,
+  IsOptional,
+  IsPhoneNumber,
+  IsString,
 } from 'class-validator';
 import { Role } from '../constants/global.constants';
 
