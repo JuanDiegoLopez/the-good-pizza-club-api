@@ -1,7 +1,14 @@
 import { Transform } from 'class-transformer';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  AfterLoad,
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { CardTypes } from '../constants/global.constants';
 import {
+  getCardCompany,
   transformCardNumber,
   transformSecurtyCode,
 } from '../utils/number.utils';
@@ -16,9 +23,6 @@ export class Payment {
   type: CardTypes;
 
   @Column()
-  bank: string;
-
-  @Column()
   @Transform((opt) => transformCardNumber(opt.value))
   number: string;
 
@@ -30,8 +34,15 @@ export class Payment {
 
   @Column()
   @Transform((opt) => transformSecurtyCode(opt.value))
-  securityCode: number;
+  securityCode: string;
 
   @ManyToOne(() => User, (user) => user.payments)
   user: User;
+
+  company: string;
+
+  @AfterLoad()
+  setCompany() {
+    this.company = getCardCompany(this.number);
+  }
 }

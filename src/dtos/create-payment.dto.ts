@@ -1,10 +1,4 @@
-import {
-  IsDateString,
-  IsEnum,
-  IsNumber,
-  IsString,
-  Length,
-} from 'class-validator';
+import { IsEnum, IsString } from 'class-validator';
 import { CardTypes } from '../constants/global.constants';
 
 export class CreatePaymentDto {
@@ -12,18 +6,14 @@ export class CreatePaymentDto {
   type: CardTypes;
 
   @IsString()
-  bank: string;
-
-  @IsString()
-  @Length(16, 16)
   number: string;
 
   @IsString()
   name: string;
 
-  @IsDateString()
+  @IsString()
   expiration: string;
 
-  @IsNumber()
-  securityCode: number;
+  @IsString()
+  securityCode: string;
 }

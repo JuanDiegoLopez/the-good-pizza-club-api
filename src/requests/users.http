@@ -25,11 +25,10 @@ Content-Type: application/json
 
 {
   "type": "credit",
-  "bank": "Bancolombia",
-  "number": "1111111111111111",
+  "number": "4444444444444422",
   "name": "JUAN LOPEZ",
   "expiration": "2024-01-01T05:00:00.000Z",
-  "securityCode": 111
+  "securityCode": "111"
 }
 
 ### Delete payment by id

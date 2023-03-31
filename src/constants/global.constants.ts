@@ -18,3 +18,11 @@ export enum CardTypes {
   Credit = 'credit',
   Debit = 'debit',
 }
+
+export enum CardCompanies {
+  Visa = 'Visa',
+  Mastercard = 'Mastercard',
+  Amex = 'AMEX',
+  Discover = 'Discover',
+  Diners = 'Diners',
+}
