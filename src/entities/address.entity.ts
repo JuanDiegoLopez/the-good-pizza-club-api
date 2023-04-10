@@ -12,10 +12,10 @@ export class Address {
   @Column()
   description: string;
 
-  @Column()
+  @Column({ type: 'float' })
   lat: number;
 
-  @Column()
+  @Column({ type: 'float' })
   lng: number;
 
   @Column({ default: false })
